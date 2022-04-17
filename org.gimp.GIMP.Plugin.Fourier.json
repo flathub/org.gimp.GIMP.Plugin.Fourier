@@ -14,9 +14,11 @@
             "name": "fourier",
             "buildsystem": "simple",
             "build-commands": [
+                "rm fourier",
                 "make"
             ],
             "post-install": [
+                "strip fourier",
                 "install -Dm755 -t ${FLATPAK_DEST}/plug-ins fourier",
                 "install -Dm644 --target ${FLATPAK_DEST}/share/metainfo/ org.gimp.GIMP.Plugin.Fourier.metainfo.xml",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.Fourier --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.Fourier"
