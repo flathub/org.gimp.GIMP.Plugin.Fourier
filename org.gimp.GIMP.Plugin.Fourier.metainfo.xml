@@ -12,6 +12,7 @@
   <project_license>GPL-3.0</project_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2014-03-09" version="0.4.5"/>
     <release date="2014-01-04" version="0.4.3"/>
   </releases>
 ​</component>

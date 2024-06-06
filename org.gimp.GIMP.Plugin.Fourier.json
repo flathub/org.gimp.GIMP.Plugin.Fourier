@@ -11,21 +11,17 @@
     "modules": [
         {
             "name": "fourier",
-            "buildsystem": "simple",
-            "build-commands": [
-                "rm fourier",
-                "make"
-            ],
+            "buildsystem": "autotools",
             "post-install": [
-                "strip fourier",
-                "install -Dm755 -t ${FLATPAK_DEST}/plug-ins fourier",
-                "install -Dm644 --target ${FLATPAK_DEST}/share/metainfo/ org.gimp.GIMP.Plugin.Fourier.metainfo.xml"
+                "strip ${FLATPAK_DEST}/lib/gimp/2.0/plug-ins/fourier",
+                "ln -s ./lib/gimp/2.0/plug-ins ${FLATPAK_DEST}",
+                "install -Dm644 org.gimp.GIMP.Plugin.Fourier.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.lprp.fr/files/old-web/soft/gimp/fourier-0.4.3.tar.gz",
-                    "sha256": "562f99f7146ed6a0afda7fdfaaf8e063c3c13b9ba38b817a535568ac3672c755"
+                    "url": "https://github.com/rpeyron/plugin-gimp-fourier/releases/download/v0.4.5/gimp-plugin-fourier-0.4.5.tar.gz",
+                    "sha256": "ba241d3aca9a67414fb447f23170c0310f342225371002ba363a4c2d1a1c9f30"
                 },
                 {
                     "type": "file",
