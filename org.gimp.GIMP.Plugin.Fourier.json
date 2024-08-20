@@ -1,31 +1,42 @@
 {
     "id": "org.gimp.GIMP.Plugin.Fourier",
-    "branch": "2-40",
+    "branch": "3",
     "runtime": "org.gimp.GIMP",
-    "runtime-version": "stable",
+    "runtime-version": "beta",
     "sdk": "org.gnome.Sdk//46",
     "build-extension": true,
     "build-options": {
-        "prefix": "/app/extensions/Fourier"
+        "prefix": "/app/extensions/plug-ins/Fourier"
     },
     "modules": [
         {
             "name": "fourier",
             "buildsystem": "autotools",
+            "no-autogen": true,
             "post-install": [
-                "strip ${FLATPAK_DEST}/lib/gimp/2.0/plug-ins/fourier",
-                "ln -s ./lib/gimp/2.0/plug-ins ${FLATPAK_DEST}",
+                "strip ${FLATPAK_DEST}/lib/gimp/3.0/plug-ins/fourier/fourier",
+                "ln -s ./lib/gimp/3.0/plug-ins/fourier/fourier ${FLATPAK_DEST}/Fourier",
                 "install -Dm644 org.gimp.GIMP.Plugin.Fourier.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/"
+            ],
+            "config-opts": [
+                "--enable-gimp3-fourier"
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/rpeyron/plugin-gimp-fourier/releases/download/v0.4.5/gimp-plugin-fourier-0.4.5.tar.gz",
-                    "sha256": "ba241d3aca9a67414fb447f23170c0310f342225371002ba363a4c2d1a1c9f30"
+                    "type": "git",
+                    "url": "https://github.com/JoesCat/plugin-gimp-fourier.git",
+                    "commit": "377903f961b5a0a16eff1f8348cf4cd20e3c6485"
                 },
                 {
                     "type": "file",
                     "path": "org.gimp.GIMP.Plugin.Fourier.metainfo.xml"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoreconf -vfi",
+                        "automake"
+                    ]
                 }
             ]
         }
