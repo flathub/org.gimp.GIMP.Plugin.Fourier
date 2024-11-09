@@ -16,6 +16,7 @@
             "post-install": [
                 "strip ${FLATPAK_DEST}/lib/gimp/3.0/plug-ins/fourier/fourier",
                 "ln -s ./lib/gimp/3.0/plug-ins/fourier/fourier ${FLATPAK_DEST}/Fourier",
+                "ln -s runtine/locale locale",
                 "install -Dm644 org.gimp.GIMP.Plugin.Fourier.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/"
             ],
             "config-opts": [
@@ -25,7 +26,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/JoesCat/plugin-gimp-fourier.git",
-                    "commit": "377903f961b5a0a16eff1f8348cf4cd20e3c6485"
+                    "//": "branch gimp2.99_p7",
+                    "commit": "1810d4969016eab58f660b22d5366d20e4362a27"
                 },
                 {
                     "type": "file",
