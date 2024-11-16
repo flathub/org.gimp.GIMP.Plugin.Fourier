@@ -25,9 +25,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/JoesCat/plugin-gimp-fourier.git",
-                    "//": "branch gimp2.99_p7",
-                    "commit": "1810d4969016eab58f660b22d5366d20e4362a27"
+                    "url": "https://github.com/rpeyron/plugin-gimp-fourier.git",
+                    "tag": "v0.4.5+gimp3rc1",
+                    "commit": "7f93b28665295bd4d68711f062f3d70fdcbf2e52"
                 },
                 {
                     "type": "file",
