@@ -3,7 +3,7 @@
     "branch": "3",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "beta",
-    "sdk": "org.gnome.Sdk//46",
+    "sdk": "org.gnome.Sdk//47",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/plug-ins/Fourier"
