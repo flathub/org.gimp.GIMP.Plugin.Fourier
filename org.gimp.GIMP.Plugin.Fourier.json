@@ -6,7 +6,7 @@
     "sdk": "org.gnome.Sdk//47",
     "build-extension": true,
     "build-options": {
-        "prefix": "/app/extensions/plug-ins/Fourier"
+        "prefix": "/app/extensions/Fourier"
     },
     "modules": [
         {
@@ -15,8 +15,8 @@
             "no-autogen": true,
             "post-install": [
                 "strip ${FLATPAK_DEST}/lib/gimp/3.0/plug-ins/fourier/fourier",
-                "ln -s ./lib/gimp/3.0/plug-ins/fourier/fourier ${FLATPAK_DEST}/Fourier",
-                "ln -s runtine/locale locale",
+                "ln -s ./lib/gimp/3.0/plug-ins ${FLATPAK_DEST}/plug-ins",
+                "ln -sf ${FLATPAK_DEST}/share/locale ${FLATPAK_DEST}/lib/gimp/3.0/plug-ins/fourier",
                 "install -Dm644 org.gimp.GIMP.Plugin.Fourier.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/"
             ],
             "config-opts": [
