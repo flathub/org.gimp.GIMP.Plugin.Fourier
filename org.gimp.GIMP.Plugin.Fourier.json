@@ -2,8 +2,8 @@
     "id": "org.gimp.GIMP.Plugin.Fourier",
     "branch": "3",
     "runtime": "org.gimp.GIMP",
-    "runtime-version": "beta",
-    "sdk": "org.gnome.Sdk//47",
+    "runtime-version": "stable",
+    "sdk": "org.gnome.Sdk//49",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/Fourier"
